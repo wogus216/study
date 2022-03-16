@@ -6,40 +6,43 @@ import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
+import logo from '../../public/asset/logo/logo.png';
+import Image from 'next/image';
+import { Grid } from '@mui/material';
+import IconMenu from './iconMenu';
 
 function appBarLabel(label) {
   return (
     <Toolbar>
-      <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
-        <MenuIcon />
-      </IconButton>
-      <Typography variant="h6" noWrap component="div" sx={{ flexGrow: 1 }}>
-        {label}
-      </Typography>
+      <Grid container spacing={2}>
+        <Grid item xs={10}>
+          <Image alt="로고" src={logo} />
+        </Grid>
+        <Grid item xs={2}>
+          <IconButton aria-label="menu" sx={{ mt: 1 }}>
+            <IconMenu />
+          </IconButton>
+        </Grid>
+      </Grid>
     </Toolbar>
   );
 }
 
-const darkTheme = createTheme({
+const whiteTheme = createTheme({
   palette: {
-    mode: 'dark',
+    mode: 'light',
     primary: {
       main: '#1976d2',
     },
   },
 });
 
-export default function EnableColorOnDarkAppBar() {
+export default function MobileNav() {
   return (
     <Stack spacing={2} sx={{ flexGrow: 1 }}>
-      <ThemeProvider theme={darkTheme}>
-        <AppBar position="static" color="primary" enableColorOnDark>
-          {appBarLabel('enableColorOnDark')}
-        </AppBar>
-        <AppBar position="static" color="primary">
-          {appBarLabel('default')}
-        </AppBar>
-      </ThemeProvider>
+      <AppBar style={{ background: '#7DC3C6' }} color="primary">
+        {appBarLabel('default')}
+      </AppBar>
     </Stack>
   );
 }
