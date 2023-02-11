@@ -82,6 +82,7 @@ a {
   margin: 5px;
   height: 3em;
   font-size: 2.5rem;
+  opacity: 0;
 }
 
 .main-message p {
@@ -162,10 +163,10 @@ a {
   width: 100%;
 }
 
-#show-scene-0 #scrolll-section-0 .sticky-elem,
-#show-scene-1 #scrolll-section-1 .sticky-elem,
-#show-scene-2 #scrolll-section-2 .sticky-elem,
-#show-scene-3 #scrolll-section-3 .sticky-elem {
+#show-scene-0 #scroll-section-0 .sticky-elem,
+#show-scene-1 #scroll-section-1 .sticky-elem,
+#show-scene-2 #scroll-section-2 .sticky-elem,
+#show-scene-3 #scroll-section-3 .sticky-elem {
   display: block;
 }
 
